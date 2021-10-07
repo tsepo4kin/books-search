@@ -1,10 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import AppHeader from './components/AppHeader';
+import BooksList from './components/BooksList';
 
 function App() {
+
+  function searchBooks() {
+    //request
+    console.log(1)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +24,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <AppHeader onCreate={searchBooks} />
+
+      <BooksList />
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.book-card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 15px 10px;
+  background-color: grey;
+}
+.book-card__img {
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  height: 140px;
+}
+.book-card__categories {
+}
+.book-card__title {
+}
+.book-card__authors {
+}

@@ -1,0 +1,33 @@
+.header {
+  height: 150px;
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header__title {
+  width: 100%;
+  text-align: center;
+}
+.header__input {
+  width: 50%;
+  margin-left: auto;
+}
+.header__search {
+  margin-right: auto;
+}
+
+.select-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.header__select__categories {
+  margin-left: auto;
+  margin-right: 10px;
+}
+.header__select__sorting {
+  margin-right: auto;
+  margin-left: 10px;
+}
