@@ -2,12 +2,12 @@ import React, { useState } from "react"
 import './AppHeader.css'
 
 
-export default function AppHeader({onCreate}) {
+export default function AppHeader({searchBooks}) {
   const [value, setValue] = useState('');
 
   function onClickHandler() {
     if(value.trim()) {
-      onCreate(value)
+      searchBooks(value)
     }
   }
 
