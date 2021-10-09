@@ -2,7 +2,6 @@ import React from "react"
 import './BookCard.css'
 
 export default function BookCard({book}) {
-  console.log(book)
   return (
     <div className="book-card">
       <img className="book-card__img" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "#"} alt='book' />
