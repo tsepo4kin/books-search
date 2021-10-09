@@ -1,7 +1,7 @@
 import React from "react"
 import BookCard from './BookCard.js'
 import Loader from "./Loader.js"
-import './BookList.css'
+import '../App.css'
 
 export default function BooksList({books, totalItems, addMoreBooks, sendBookName, loadingMore}) { 
   return (

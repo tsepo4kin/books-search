@@ -1,5 +1,5 @@
 import React from "react"
-import './BookCard.css'
+import '../App.css'
 
 export default function BookCard({book, openBookDescription}) {
   function sendBook() {
