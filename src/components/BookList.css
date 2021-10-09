@@ -1,7 +1,6 @@
 .container {
   width: 1024px;
   margin: 5px auto;
-  border: 1px solid black;
   padding: 10px;
   display: flex;
   justify-content: space-around;
@@ -9,8 +8,10 @@
 }
 
 .books-counter {
+  margin: 5px 0;
   width: 100%;
   text-align: center;
+  font-size: 14px;
 }
 
 .btn-wrapper {

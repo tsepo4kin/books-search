@@ -29,7 +29,8 @@ export default function AppHeader({searchBooks}) {
       <button className="header__search" onClick={onClickHandler} >Search</button>
 
       <div className="select-wrapper">
-        <select className="header__select__categories" size="1" name="" id="" value={categoriesValue} onChange={changeSelectCategories}>
+        <label htmlFor="categories" className='categories-label'> Categories </label>
+        <select className="header__select__categories" size="1" id="categories" value={categoriesValue} onChange={changeSelectCategories}>
           <option value='all'>all</option>
           <option value='art'>art</option>
           <option value='biography'>biography</option>
@@ -38,8 +39,9 @@ export default function AppHeader({searchBooks}) {
           <option value='medical'>medical</option>
           <option value='poetry'>poetry</option>
         </select>
-    
-        <select className="header__select__sorting" size="1" name="" id="" value={sortingValue} onChange={changeSelectSorting}>
+
+        <label htmlFor="sorting" className='sorting-label'> Sorting </label>
+        <select className="header__select__sorting" size="1" name="" id="sorting" value={sortingValue} onChange={changeSelectSorting}>
           <option value='relevance'>relevance</option>
           <option value='newest'>newest</option>
         </select>

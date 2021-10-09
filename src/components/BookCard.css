@@ -1,19 +1,33 @@
 .book-card {
   width: 200px;
   height: 300px;
-  border: 1px solid black;
   margin: 15px 10px;
-  background-color: grey;
+  background-color: #F3F2F1;
+  padding: 10px;
+  cursor: pointer;
 }
 .book-card__img {
   display: block;
   margin: 20px auto;
   width: 100px;
   height: 140px;
+  box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
 }
 .book-card__categories {
+  color: #BBBBBB;
+  font-size: 12px;
+  text-align: left;
 }
 .book-card__title {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+  max-height: 50px;
+  overflow: hidden;
 }
 .book-card__authors {
+  color: #BBBBBB;
+  font-size: 12px;
+  text-align: left;
 }

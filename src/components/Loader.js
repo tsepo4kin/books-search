@@ -3,7 +3,7 @@ import './Loader.css';
 
 export default function Loader() {
   return (
-    <div style={{display: "flex",justifyContent: 'center'}}>
+    <div style={{display: "flex",justifyContent: 'center', margin: '20px 0'}}>
       <div className="lds-roller">
         <div></div>
         <div></div>

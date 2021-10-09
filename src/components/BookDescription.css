@@ -1,8 +1,6 @@
 .book-item-wrapper {
   width: 1024px;
-  margin: 5px auto;
-  border: 1px solid black;
-  padding: 10px;
+  margin: 0 auto;
 }
 
 
@@ -12,9 +10,9 @@
 }
 
 .book-item__img__wrapper {
-  background-color: gray;
-  width: 400px;
-  height: 400px;
+  background-color: #F3F2F1;
+  width: 450px;
+  height: 450px;
 }
 
 .book-item__img {
@@ -25,12 +23,29 @@
 }
 
 .book-item-description-wrapper {
-  border: 1px solid red;
-  width: 550px;
-  padding: 10px;
+  width: 500px;
+  padding: 40px;
 }
 
 .book-item__breadcrumbs {
+  text-align: left;
 }
 .book-item__description {
+  text-align: left;
+}
+
+.book-item__title {
+  text-align: left;
+}
+
+.book-item__authors {
+  text-align: left;
+}
+
+.book-item__description {
+  text-align: left;
+}
+
+.book-item__button {
+  margin: 10px 0;
 }

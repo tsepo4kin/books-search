@@ -1,6 +1,8 @@
 .header {
+  color: #fff;
   height: 150px;
-  background-color: red;
+  background: rgb(47, 73, 73) url(https://pickvisa.com/storage/public/articles/biblioteka-s-cvetnimi-knigami.jpg);
+  background-blend-mode: overlay;
   display: flex;
   flex-wrap: wrap;
 }
@@ -23,11 +25,20 @@
   display: flex;
 }
 
-.header__select__categories {
+.categories-label {
   margin-left: auto;
+  margin-right: 5px;
+}
+
+.header__select__categories {
   margin-right: 10px;
 }
+
+.sorting-label {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
 .header__select__sorting {
   margin-right: auto;
-  margin-left: 10px;
 }
