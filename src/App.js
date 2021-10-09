@@ -2,10 +2,14 @@ import "./App.css";
 import AppHeader from "./components/AppHeader";
 import BooksList from "./components/BooksList";
 import React, { useState, useEffect } from "react";
+import BookDescription from "./components/BookDescription";
+
 function App() {
   const [books, setBook] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [searchParams, setSearchParams] = useState(0);
+  const [bookData, setBookData] = useState(false);
+  const [showBookData, setShowBookData] = useState(false)
 
   function searchBooks(value, categoriesValue, sortingValue) {
     setSearchParams({
@@ -19,13 +23,11 @@ function App() {
     if (!searchParams) {
       console.log("start ren");
     } else {
-      console.log(searchParams)
       fetch(
         `https://www.googleapis.com/books/v1/volumes?q="${searchParams.inputValue}"&maxResults=30&orderBy=${searchParams.sortingValue}&subject=${searchParams.categoriesValue}&printType=books&key=AIzaSyDqSD1ikizFCnZNTB4eEtf_udpdHc_ZpDs`
       )
         .then((r) => r.json())
         .then((r) => {
-          console.log(r);
           setTotalItems(r.totalItems);
           setBook(r.items);
         });
@@ -42,15 +44,29 @@ function App() {
       });
   }
 
+  function sendBookData(e) {
+    setShowBookData(true)
+    setBookData(e)
+  }
+
+  function closeShowBook() {
+    setShowBookData(false)
+    setBookData(false)
+  }
+
   return (
     <div className="App">
       <AppHeader searchBooks={searchBooks} />
 
-      <BooksList
+      {showBookData && <BookDescription book={bookData} closeShowBook={closeShowBook}/>}
+
+      {!showBookData && <BooksList
         books={books}
         totalItems={totalItems}
         addMoreBooks={addBooks}
-      />
+        sendBookName={sendBookData}
+      />}
+
     </div>
   );
 }

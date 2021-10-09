@@ -1,9 +1,12 @@
 import React from "react"
 import './BookCard.css'
 
-export default function BookCard({book}) {
+export default function BookCard({book, openBookDescription}) {
+  function sendBook() {
+    openBookDescription(book)
+  }
   return (
-    <div className="book-card">
+    <div className="book-card" onClick={sendBook}>
       <img className="book-card__img" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "#"} alt='book' />
       <p className="book-card__categories">{book.volumeInfo?.categories}</p>
       <h5 className="book-card__title">{book.volumeInfo?.title}</h5>
