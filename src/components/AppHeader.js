@@ -1,15 +1,19 @@
 import React, { useState } from "react"
+import {changeSearchParams} from '../store/actions'
+import {useDispatch} from 'react-redux'
 import '../App.css'
 
 
-export default function AppHeader({searchBooks}) {
-  const [value, setValue] = useState('');
+export default function AppHeader() {
+  const [inputValue, setInputValue] = useState('');
   const [categoriesValue, setCategoriesValue] = useState('all')
   const [sortingValue, setSortingValue] = useState('relevance')
+  const dispatch = useDispatch()
 
   function onClickHandler() {
-    if(value.trim()) {
-      searchBooks(value, categoriesValue, sortingValue)
+    console.log(inputValue)
+    if(inputValue.trim()) {
+      dispatch(changeSearchParams({inputValue, categoriesValue, sortingValue}))
     }
   }
 
@@ -25,7 +29,7 @@ export default function AppHeader({searchBooks}) {
   return (
     <header className="header">
       <h1 className="header__title">Search for books</h1>
-      <input className="header__input" value={value} onChange={(evt) => {setValue(evt.target.value)}} type="text" />
+      <input className="header__input" value={inputValue} onChange={(evt) => {setInputValue(evt.target.value)}} type="text" />
       <button className="header__search" onClick={onClickHandler} >Search</button>
 
       <div className="select-wrapper">
