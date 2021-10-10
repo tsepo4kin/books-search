@@ -12,7 +12,7 @@ export default function BookDescription({book, closeShowBook}) {
           <p className="book-item__breadcrumbs"><span>{book.volumeInfo.categories}</span></p>
           <h2 className="book-item__title">{book.volumeInfo.title}</h2>
           <p className="book-item__authors">{book.volumeInfo.authors}</p>
-          <p className="book-item__description">qweqwe</p>
+          <p className="book-item__description">{book.volumeInfo.description}</p>
         </div>
       <button className="book-item__button" onClick={closeShowBook}>close</button>
     </div>
