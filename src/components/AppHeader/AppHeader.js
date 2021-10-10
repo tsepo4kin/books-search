@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import {changeSearchParams} from '../store/actions'
+import { fetchBooks } from '../../store/actions'
 import {useDispatch} from 'react-redux'
-import '../App.css'
 
 
 export default function AppHeader() {
@@ -11,9 +10,8 @@ export default function AppHeader() {
   const dispatch = useDispatch()
 
   function onClickHandler() {
-    console.log(inputValue)
     if(inputValue.trim()) {
-      dispatch(changeSearchParams({inputValue, categoriesValue, sortingValue}))
+      dispatch(fetchBooks({inputValue, categoriesValue, sortingValue}))
     }
   }
 

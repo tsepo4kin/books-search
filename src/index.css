@@ -11,3 +11,336 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: gray;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+.header {
+  color: #fff;
+  height: 160px;
+  background: rgb(47, 73, 73) url(https://pickvisa.com/storage/public/articles/biblioteka-s-cvetnimi-knigami.jpg);
+  background-blend-mode: overlay;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header__title {
+  width: 100%;
+  text-align: center;
+}
+.header__input {
+  width: 50%;
+  margin-left: auto;
+}
+.header__search {
+  margin-right: auto;
+}
+
+.select-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.categories-label {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.header__select__categories {
+  margin-right: 10px;
+}
+
+.sorting-label {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.header__select__sorting {
+  margin-right: auto;
+}
+
+
+.container {
+  width: 1350px;
+  margin: 5px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.books-counter {
+  margin: 5px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn-wrapper {
+  width: 100%;
+}
+
+.add-more-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.book-card {
+  width: 200px;
+  height: 300px;
+  margin: 15px 10px;
+  background-color: #F3F2F1;
+  padding: 10px;
+  cursor: pointer;
+}
+.book-card__img {
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  height: 140px;
+  box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+}
+.book-card__categories {
+  color: #BBBBBB;
+  font-size: 12px;
+  text-align: left;
+}
+.book-card__title {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+  max-height: 50px;
+  overflow: hidden;
+}
+.book-card__authors {
+  color: #BBBBBB;
+  font-size: 12px;
+  text-align: left;
+}
+
+.book-item-wrapper {
+  width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+.book-item__img__wrapper {
+  background-color: #F3F2F1;
+  width: 40%;
+  height: 450px;
+}
+
+.book-item__img {
+  display: block;
+  width: 200px;
+  height: 300px;
+  margin: 50px auto;
+}
+
+.book-item-description-wrapper {
+  width: 50%;
+  padding: 40px;
+}
+
+.book-item__breadcrumbs {
+  text-align: left;
+}
+.book-item__description {
+  text-align: left;
+}
+
+.book-item__title {
+  text-align: left;
+}
+
+.book-item__authors {
+  text-align: left;
+}
+
+.book-item__description {
+  text-align: left;
+}
+
+.book-item__button {
+  margin: 35px auto;
+  width: 200px;
+  height: 60px;
+  font-size: 32px;
+}
+
+@media only screen and (max-width: 1500px) {
+
+  .book-item-wrapper {
+    width: 1150px;
+  }
+
+  .container {
+    width: 1150px;
+  }
+  
+}
+
+@media only screen and (max-width: 1200px) {
+  .book-item-wrapper {
+    width: 100%;
+  }
+
+  .book-item__img__wrapper {
+    width: 40%;
+  }
+
+  .book-item-description-wrapper {
+    width: 50%;
+    padding: 5%;
+  }
+
+  .book-item__button {
+    margin: 10px auto;
+    width: 120px;
+    height: 35px;
+    font-size: 24px;
+  }
+
+  .container {
+    width: 720px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .header {
+    font-size: 12px;
+  }
+
+  .book-item-wrapper {
+    width: 100%;
+  }
+
+  .container {
+    width: 480px;
+  }
+
+  .book-item__img__wrapper {
+    width: 100%;
+    height: 450px;
+  }
+
+  .book-item__img {
+    width: 200px;
+    height: 300px;
+    margin: 50px auto;
+  }
+
+  .book-item-description-wrapper {
+    width: 100%;
+    padding: 5%;
+  }
+
+  .book-item__button {
+    margin: 10px auto;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) { 
+  .container {
+    width: 280px;
+  }
+}
+
+

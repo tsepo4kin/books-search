@@ -1,10 +1,11 @@
 import React from "react"
-import '../App.css'
+
 
 export default function BookCard({book, openBookDescription}) {
   function sendBook() {
     openBookDescription(book)
   }
+
   return (
     <div className="book-card" onClick={sendBook}>
       <img className="book-card__img" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "#"} alt='book' />

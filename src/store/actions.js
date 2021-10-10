@@ -1,4 +1,4 @@
-import {ADD_MORE_BOOKS, SET_BOOKS, CHANGE_SEARCH_PARAMS, TOGGLE_SEARCH_LOADER, TOGGLE_PAGINATION_LOADER} from './types'
+import {ADD_MORE_BOOKS, SET_BOOKS, CHANGE_SEARCH_PARAMS, TOGGLE_SEARCH_LOADER, TOGGLE_PAGINATION_LOADER, SET_BOOKS_COUNT} from './types'
 
 
 export const setBooks = (books) => ({
@@ -7,6 +7,29 @@ export const setBooks = (books) => ({
     books
   }
 })
+
+export const setFoundBooks = (booksCount) => ({
+  type: SET_BOOKS_COUNT,
+  payload: {
+    booksCount
+  }
+})
+
+export const fetchBooks = (searchParams) => {
+  return function(dispatch) {
+    dispatch(toggleSearchLoader());
+    dispatch(changeSearchParams(searchParams))
+      fetch(
+        `https://www.googleapis.com/books/v1/volumes?q="${searchParams.inputValue}"&maxResults=30&orderBy=${searchParams.sortingValue}&subject=${searchParams.categoriesValue}&printType=books&key=AIzaSyDqSD1ikizFCnZNTB4eEtf_udpdHc_ZpDs`
+      )
+        .then((r) => r.json())
+        .then((r) => {
+          dispatch(setFoundBooks(r.totalItems));
+          dispatch(setBooks(r.items));
+          dispatch(toggleSearchLoader());
+        });
+  }
+}
 
 export const addMoreBooks = (books) => ({
   type: ADD_MORE_BOOKS,
