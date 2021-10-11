@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tsepo4kin/books-search/static/css/main.fec1446d.chunk.css",
+    "main.js": "/tsepo4kin/books-search/static/js/main.528e2f06.chunk.js",
+    "main.js.map": "/tsepo4kin/books-search/static/js/main.528e2f06.chunk.js.map",
+    "runtime-main.js": "/tsepo4kin/books-search/static/js/runtime-main.1ef98852.js",
+    "runtime-main.js.map": "/tsepo4kin/books-search/static/js/runtime-main.1ef98852.js.map",
+    "static/js/2.bd0dd88a.chunk.js": "/tsepo4kin/books-search/static/js/2.bd0dd88a.chunk.js",
+    "static/js/2.bd0dd88a.chunk.js.map": "/tsepo4kin/books-search/static/js/2.bd0dd88a.chunk.js.map",
+    "static/js/3.8dbf9a4c.chunk.js": "/tsepo4kin/books-search/static/js/3.8dbf9a4c.chunk.js",
+    "static/js/3.8dbf9a4c.chunk.js.map": "/tsepo4kin/books-search/static/js/3.8dbf9a4c.chunk.js.map",
+    "index.html": "/tsepo4kin/books-search/index.html",
+    "static/css/main.fec1446d.chunk.css.map": "/tsepo4kin/books-search/static/css/main.fec1446d.chunk.css.map",
+    "static/js/2.bd0dd88a.chunk.js.LICENSE.txt": "/tsepo4kin/books-search/static/js/2.bd0dd88a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ef98852.js",
+    "static/js/2.bd0dd88a.chunk.js",
+    "static/css/main.fec1446d.chunk.css",
+    "static/js/main.528e2f06.chunk.js"
+  ]
+}
