@@ -12,4 +12,13 @@ describe('testing search reducer', () => {
 
     expect(newState).toEqual(newSearchParams)
   })
+
+  it('shoud return state with wrong action', () => {
+    const wrongAction = {type: 'WRONG_TEST_ACTION'}
+    const state = {inputValue: 'testValue', categoriesValue: 'testCategories', sortingValue: 'testSorting'};
+
+    const newState = searchReducer(state, wrongAction)
+    console.log(newState)
+    expect(newState).toEqual(state)
+  })
 })
