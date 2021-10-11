@@ -17,8 +17,14 @@ export default function BooksList({bookData}) {
 
 
   function addBooks() {
-    //check max len
-    dispatch(fetchMoreBooks(books.booksItems.length, searchParams))
+    if(books.booksCount - books.booksItems.length <= 0) {
+      console.log('all books')
+    }else if(books.booksCount - books.booksItems.length >= 30) {
+      dispatch(fetchMoreBooks(books.booksItems.length, searchParams))
+    } else if(books.booksCount - books.booksItems.length < 30) {
+      dispatch(fetchMoreBooks(books.booksItems.length, searchParams, books.booksCount - books.booksItems.length))
+    }
+    
   }
 
   return (
