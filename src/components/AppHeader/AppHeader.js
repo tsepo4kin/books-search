@@ -22,8 +22,14 @@ export default function AppHeader() {
     setSortingValue(e.target.value);
   }
 
+  function handleKeyPress(e) {
+    if(e.key === 'Enter') {
+      onClickHandler()
+    }
+  }
+
   return (
-    <header className="header">
+    <header className="header" onKeyPress={handleKeyPress}>
       <h1 className="header__title">Search for books</h1>
       <input
         className="header__input"
