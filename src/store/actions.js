@@ -38,6 +38,20 @@ export const addMoreBooks = (books) => ({
   }
 })
 
+export const fetchMoreBooks = (length, searchParams) => {
+  return function(dispatch) {
+    dispatch(togglePaginationLoader());
+    fetch(
+      `https://www.googleapis.com/books/v1/volumes?q="${searchParams.inputValue}"&startIndex=${length}&maxResults=30&orderBy=${searchParams.sortingValue}&subject=${searchParams.categoriesValue}&printType=books&key=AIzaSyDqSD1ikizFCnZNTB4eEtf_udpdHc_ZpDs`
+    )
+      .then((r) => r.json())
+      .then((r) => {
+        dispatch(addMoreBooks(r.items));
+        dispatch(togglePaginationLoader());
+      });
+  }
+}
+
 export const changeSearchParams = (searchParams) => ({
   type: CHANGE_SEARCH_PARAMS,
   payload: {

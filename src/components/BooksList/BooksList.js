@@ -1,10 +1,7 @@
 import React from "react";
 import BookCard from "../BookCard/BookCard.js";
 import Loader from "../Loader/Loader.js";
-import {
-  addMoreBooks,
-  togglePaginationLoader,
-} from "../../store/actions";
+import { fetchMoreBooks } from "../../store/actions";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -20,15 +17,8 @@ export default function BooksList({bookData}) {
 
 
   function addBooks() {
-    dispatch(togglePaginationLoader());
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q="${searchParams.inputValue}"&startIndex=${books.booksItems.length}&maxResults=30&orderBy=${searchParams.sortingValue}&subject=${searchParams.categoriesValue}&printType=books&key=AIzaSyDqSD1ikizFCnZNTB4eEtf_udpdHc_ZpDs`
-    )
-      .then((r) => r.json())
-      .then((r) => {
-        dispatch(addMoreBooks(r.items));
-        dispatch(togglePaginationLoader());
-      });
+    //check max len
+    dispatch(fetchMoreBooks(books.booksItems.length, searchParams))
   }
 
   return (
