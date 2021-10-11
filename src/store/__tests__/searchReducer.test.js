@@ -18,7 +18,7 @@ describe('testing search reducer', () => {
     const state = {inputValue: 'testValue', categoriesValue: 'testCategories', sortingValue: 'testSorting'};
 
     const newState = searchReducer(state, wrongAction)
-    console.log(newState)
+  
     expect(newState).toEqual(state)
   })
 })

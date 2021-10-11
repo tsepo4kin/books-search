@@ -37,4 +37,13 @@ describe('testing loader reducer', () => {
 
     expect(newState.paginationLoader).toBe(false)
   })
+
+  it('shoud return state with wrong action', () => {
+    const wrongAction = {type: 'WRONG_TEST_ACTION'}
+    const state = {searchLoader: false, paginationLoader: true};
+
+    const newState = loaderReducer(state, wrongAction)
+
+    expect(newState).toEqual(state)
+  })
 })
