@@ -2,10 +2,9 @@ import { booksReducer } from "../booksReducer";
 import { setBooks, setFoundBooks, addMoreBooks } from "../actions";
 
 describe("testing booksReducer", () => {
-  it("books shoud be set", () => {
+  it("shoud set books", () => {
     const books = [{}, {}, {}];
     const setBooksAction = setBooks(books);
-
     const state = {
       booksItems: [{}, {}, {}, {}, {}],
       booksCount: 25,
@@ -16,10 +15,9 @@ describe("testing booksReducer", () => {
     expect(newState.booksItems).toEqual(books);
   });
 
-  it("set books count", () => {
+  it("shoud set books count", () => {
     const booksCount = 123;
     const setFoundBooksAction = setFoundBooks(booksCount);
-
     const state = {
       booksItems: [{}, {}, {}, {}, {}],
       booksCount: 5,
@@ -30,10 +28,9 @@ describe("testing booksReducer", () => {
     expect(newState.booksCount).toBe(booksCount)
   })
 
-  it('add more books', () => {
+  it('shoud add more books', () => {
     const books = [{}, {}, {}, {}, {}];
     const addMoreBooksAction = addMoreBooks(books);
-
     const state = {
       booksItems: [{}, {}, {}, {}, {}],
       booksCount: 25,
@@ -42,5 +39,17 @@ describe("testing booksReducer", () => {
     const newState = booksReducer(state, addMoreBooksAction)
 
     expect(newState.booksItems).toEqual(state.booksItems.concat(books))
+  })
+
+  it('shoud return state with wrong action', () => {
+    const wrongAction = {type: 'WRONG_TEST_ACTION'}
+    const state = {
+      booksItems: [{}, {}, {}, {}, {}],
+      booksCount: 25,
+    };
+
+    const newState = booksReducer(state, wrongAction)
+
+    expect(newState).toEqual(state)
   })
 });
