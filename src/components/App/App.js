@@ -4,7 +4,7 @@ import BooksList from "../BooksList/BooksList";
 import Loader from "../Loader/Loader.js";
 import React, { useState } from "react";
 import BookDescription from "../BookDescription/BookDescription";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 function App() {
   const [bookData, setBookData] = useState(false);
@@ -25,11 +25,12 @@ function App() {
     <div className="App">
       <AppHeader />
 
-      {showBookData && <BookDescription book={bookData} closeShowBook={closeShowBook}/>}
+      {showBookData && (
+        <BookDescription book={bookData} closeShowBook={closeShowBook} />
+      )}
 
       {searchLoader && <Loader />}
-      {!showBookData && !searchLoader && <BooksList bookData={sendBookData}/>}
-
+      {!showBookData && !searchLoader && <BooksList bookData={sendBookData} />}
     </div>
   );
 }

@@ -23,12 +23,12 @@ describe("testing booksReducer", () => {
       booksCount: 5,
     };
 
-    const newState = booksReducer(state, setFoundBooksAction)
+    const newState = booksReducer(state, setFoundBooksAction);
 
-    expect(newState.booksCount).toBe(booksCount)
-  })
+    expect(newState.booksCount).toBe(booksCount);
+  });
 
-  it('shoud add more books', () => {
+  it("shoud add more books", () => {
     const books = [{}, {}, {}, {}, {}];
     const addMoreBooksAction = addMoreBooks(books);
     const state = {
@@ -36,20 +36,20 @@ describe("testing booksReducer", () => {
       booksCount: 25,
     };
 
-    const newState = booksReducer(state, addMoreBooksAction)
+    const newState = booksReducer(state, addMoreBooksAction);
 
-    expect(newState.booksItems).toEqual(state.booksItems.concat(books))
-  })
+    expect(newState.booksItems).toEqual(state.booksItems.concat(books));
+  });
 
-  it('shoud return state with wrong action', () => {
-    const wrongAction = {type: 'WRONG_TEST_ACTION'}
+  it("shoud return state with wrong action", () => {
+    const wrongAction = { type: "WRONG_TEST_ACTION" };
     const state = {
       booksItems: [{}, {}, {}, {}, {}],
       booksCount: 25,
     };
 
-    const newState = booksReducer(state, wrongAction)
+    const newState = booksReducer(state, wrongAction);
 
-    expect(newState).toEqual(state)
-  })
+    expect(newState).toEqual(state);
+  });
 });
